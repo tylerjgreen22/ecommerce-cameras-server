@@ -2,6 +2,7 @@ const express = require("express");
 const products = require("./products/controller");
 const users = require("./users/controller");
 const orders = require("./orders/controller");
+const email = require("./email/controller");
 const cors = require("cors");
 const morgan = require("morgan");
 const fileUpload = require("express-fileupload");
@@ -28,6 +29,7 @@ app.get("/", (req, res) => {
 app.use("/api/v1/products", products);
 app.use("/api/v1/users", users);
 app.use("/api/v1/orders", orders);
+app.use("/api/v1/email", email);
 
 app.listen(port, () => {
     console.log(`Server running on ${port}`)
